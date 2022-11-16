@@ -1,0 +1,153 @@
+.f-popup {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 2000;
+
+  // 遮罩层
+  &__mask {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0.5;
+    background: #23272e;
+
+    // 高斯谋划
+    &.f-popup__blur {
+      backdrop-filter: blur(2px);
+    }
+  }
+
+  // 主容器公共样式
+  &__container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: 0.3s;
+
+    .f-popup__wrapper {
+      position: absolute;
+      background: #fff;
+      box-sizing: border-box;
+      overflow-y: auto;
+      overflow-x: hidden;
+
+      // 主内容动画样式
+      &-transition-enter-active,
+      &-transition-leave-active {
+        transition: all 0.2s ease-out;
+      }
+
+      &-transition-enter-from,
+      &-transition-leave-to {
+        opacity: 0;
+      }
+    }
+  }
+
+  // 主容器居中
+  &__container-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .f-popup__wrapper {
+      border-radius: 6px;
+      max-height: 90%;
+      box-shadow: 0 0 18px #00000066;
+
+      &-transition-enter-from,
+      &-transition-leave-to {
+        transform: scale(0.4);
+      }
+    }
+  }
+
+  // 左侧弹出
+  &__container-left {
+    .f-popup__wrapper {
+      top: 0;
+      bottom: 0;
+      left: 0;
+
+      &-transition-enter-from,
+      &-transition-leave-to {
+        transform: translateX(-100%);
+      }
+    }
+  }
+
+  // 右侧弹出
+  &__container-right {
+    .f-popup__wrapper {
+      top: 0;
+      bottom: 0;
+      right: 0;
+
+      &-transition-enter-from,
+      &-transition-leave-to {
+        transform: translateX(100%);
+      }
+    }
+  }
+
+  // 上方弹出
+  &__container-top {
+    .f-popup__wrapper {
+      top: 0;
+      left: 0;
+      right: 0;
+
+      &-transition-enter-from,
+      &-transition-leave-to {
+        transform: translateY(-100%);
+      }
+    }
+  }
+
+  // 下方弹出
+  &__container-bottom {
+    .f-popup__wrapper {
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      &-transition-enter-from,
+      &-transition-leave-to {
+        transform: translateY(100%);
+        opacity: 0;
+      }
+    }
+  }
+
+  // 遮罩层动画
+  &__transition-enter-active {
+    transition: all 0.2s ease-out;
+  }
+
+  &__transition-leave-active {
+    transition: all 0.4s cubic-bezier(1, 0.5, 0.8, 1);
+  }
+
+  &__transition-enter-from,
+  &__transition-leave-to {
+    opacity: 0;
+  }
+
+  // 滚动条
+  ::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  // 滚动滑块
+  ::-webkit-scrollbar-thumb {
+    background: #dddddd;
+    border-radius: 6px;
+  }
+}

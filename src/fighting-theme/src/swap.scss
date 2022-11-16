@@ -1,0 +1,27 @@
+.f-swap {
+  user-select: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  &.f-swap__sound-on {
+    transform: rotate(80deg);
+    transition-duration: 0.3s;
+  }
+
+  &.f-swap__sound-off {
+    transform: rotate(0deg);
+    transition-duration: 0.3s;
+  }
+
+  &.f-swap__swap-on {
+    transition-duration: 0.3s;
+    transform: rotateY(180deg);
+  }
+
+  &.f-swap__swap-off {
+    transition-duration: 0.3s;
+    transform: rotateY(0deg);
+  }
+}

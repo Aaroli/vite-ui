@@ -1,0 +1,180 @@
+@import '../config/const-color.scss';
+
+.f-calendar {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: default;
+
+  // 头部
+  &__header {
+    box-sizing: border-box;
+    width: 100%;
+    background: #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 10px;
+    box-sizing: border-box;
+
+    // 当前时间
+    .f-calendar__time {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .f-calendar__time-now {
+        font-weight: 700;
+        color: #333;
+      }
+    }
+
+    // 操作栏
+    .f-calendar__option {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-width: 250px;
+
+      .f-calendar__last,
+      .f-calendar__now,
+      .f-calendar__next {
+        margin: 0 5px;
+      }
+    }
+  }
+
+  // 星期
+  &__week {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+
+    .f-calendar__week-li {
+      height: var(--f-calendar-week-height, 50px);
+      box-sizing: border-box;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  // 天
+  &__day {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+
+    .f-calendar__day-li {
+      height: var(--f-calendar-day-height, 90px);
+      box-sizing: border-box;
+      padding: 10px;
+      display: flex;
+      // justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      transition: 0.3s;
+      overflow: auto;
+      position: relative;
+      border-top: 3px solid transparent;
+
+      &:hover {
+        background: #f7f7f7;
+      }
+
+      &.f-calendar__day-li-last {
+        color: #c6c6c6;
+      }
+
+      // 阳历
+      .f-calendar__solar {
+        font-size: 15px;
+      }
+
+      // 农历
+      .f-calendar__lunar {
+        font-size: 14px;
+      }
+
+      // 今天
+      &.f-calendar__day-today {
+        color: $primary;
+        background: $simplePrimary;
+        border-top: 3px solid $primary;
+        transition: 0.3s;
+      }
+
+      // 不是当月的时间
+      &.f-calendar__not-month {
+        color: #cecece;
+      }
+
+      // 备忘录
+      .f-calendar__memorandum {
+        position: absolute;
+        height: 26px;
+        bottom: 0px;
+        right: 0;
+        left: 0;
+        overflow: auto;
+        background: #fff;
+        cursor: pointer;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        overflow-x: hidden;
+        overflow-y: auto;
+        transition: height 0.5s;
+        padding: 10px;
+        box-sizing: border-box;
+        box-shadow: 0 -6px 12px 0 #5b78d817;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+
+        &:hover {
+          height: 100%;
+        }
+
+        .f-calendar__memorandum-item {
+          margin-bottom: 8px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  // 边框
+  &.f-calendar__border {
+    border-top: 1px solid var(--f-calendar-border-color, #eee);
+    border-left: 1px solid var(--f-calendar-border-color, #eee);
+
+    .f-calendar__header {
+      border-right: 1px solid var(--f-calendar-border-color, #eee);
+    }
+
+    .f-calendar__week {
+      border-bottom: 1px solid var(--f-calendar-border-color, #eee);
+      border-top: 1px solid var(--f-calendar-border-color, #eee);
+
+      .f-calendar__week-li {
+        border-right: 1px solid var(--f-calendar-border-color, #eee);
+      }
+    }
+
+    .f-calendar__day {
+      .f-calendar__day-li {
+        border-right: 1px solid var(--f-calendar-border-color, #eee);
+        border-bottom: 1px solid var(--f-calendar-border-color, #eee);
+      }
+    }
+  }
+}

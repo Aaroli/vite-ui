@@ -1,0 +1,38 @@
+@import '../config/const-color.scss';
+
+.f-close-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 2px;
+  box-sizing: border-box;
+  transition: 0.3s;
+  color: $primary;
+
+  &.f-close-btn__round {
+    border-radius: 30px;
+  }
+
+  &.f-close-btn__no-hover {
+    &:hover {
+      background: transparent;
+      color: lighten($primary, 10%);
+    }
+  }
+
+  &:hover {
+    background: #eee;
+    color: lighten($primary, 10%);
+  }
+
+  &:active {
+    color: darken($primary, 10%);
+  }
+}
+
+// 禁用状态
+.f-close-btn__disabled {
+  cursor: not-allowed;
+  color: lighten($primary, 20%);
+}

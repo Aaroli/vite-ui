@@ -1,0 +1,26 @@
+.f-card {
+  border: #e5e5e5 solid 1px;
+  transition: 0.3s;
+  background: #fff;
+
+  &__header {
+    padding: 16px 20px;
+    border-bottom: 1px solid #eee;
+  }
+
+  &.f-card__shadow-never {
+    box-shadow: none;
+  }
+
+  &.f-card__shadow-always {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  }
+
+  &.f-card__shadow-hover:hover {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  }
+
+  &.f-card__round {
+    border-radius: 10px;
+  }
+}

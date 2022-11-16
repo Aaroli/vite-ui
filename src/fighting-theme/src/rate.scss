@@ -1,0 +1,28 @@
+.f-rate {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+
+  &__list {
+    display: inline-flex;
+
+    .f-rate__star {
+      cursor: pointer;
+      transition: 0.4s;
+      position: relative;
+
+      &:hover {
+        transform: scale(1.25);
+      }
+
+      &.f-rate-star-readonly:hover {
+        transform: scale(1);
+      }
+    }
+  }
+
+  .f-text {
+    margin-left: 8px;
+  }
+}

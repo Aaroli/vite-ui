@@ -1,0 +1,44 @@
+{
+  "name": "vite-ui-vite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:serve": "vitepress serve docs",
+    "test": "vitest"
+  },
+  "keywords": [
+    "vite-ui",
+    "component library",
+    "UI framework",
+    "UI library",
+    "vue3"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@iconify-json/ic": "1.1.4",
+    "@types/node": "^18.11.9",
+    "@types/store": "^2.0.2",
+    "@vitejs/plugin-vue": "3.0.3",
+    "@vitejs/plugin-vue-jsx": "2.0.0",
+    "@vue/test-utils": "2.0.2",
+    "@vuepress/plugin-docsearch": "2.0.0-beta.53",
+    "happy-dom": "6.0.4",
+    "sass": "^1.49.7",
+    "unocss": "0.45.6",
+    "unplugin-vue-define-options": "^0.12.7",
+    "vite": "3.0.7",
+    "vitepress": "1.0.0-alpha.4",
+    "vitepress-theme-demoblock": "1.4.2",
+    "vitest": "0.21.1"
+  },
+  "dependencies": {
+    "vue": "^3.2.41",
+    "store": "^2.0.12"
+  }
+}

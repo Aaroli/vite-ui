@@ -1,0 +1,58 @@
+.f-image {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  width: var(--f-image-width);
+  height: var(--f-image-height);
+  border-radius: var(--f-image-border-radius);
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    border-radius: var(--f-image-border-radius);
+  }
+
+  &__select {
+    user-select: none;
+  }
+
+  // 适应容器方式
+  &__fill {
+    object-fit: fill;
+  }
+
+  &__contain {
+    object-fit: contain;
+  }
+
+  &__cover {
+    object-fit: cover;
+  }
+
+  &__none {
+    object-fit: none;
+  }
+
+  &__scale-down {
+    object-fit: scale-down;
+  }
+
+  &__block {
+    display: block;
+  }
+}
+
+// 加载失败
+.f-image__error {
+  display: inline-block;
+
+  .f-image__error-text {
+    display: inline-block;
+    background: #eee;
+    padding: 0 3px;
+    border-radius: 3px;
+    font-size: 15px;
+    color: #333;
+  }
+}
