@@ -16,20 +16,14 @@
 ## Install
 
 ```bash
-npm i vite-admin-ui
+npm i vite-ui-vite
 ```
 
 ## Quick Start
 
 ```js
-import Vue from "vue";
-import viteUI from "element-ui";
-
-const App = {
-  template: `
-                <MyButton/>
-            `,
-};
+import vitUi from "vite-ui-vite";
+import "vite-ui-vite/assets/index.css";
 
 createApp(App).use(viteUI).mount("#app");
 ```
